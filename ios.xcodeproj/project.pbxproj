@@ -21,7 +21,7 @@
 		2335234A192723B0005E0268 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2335232C192723B0005E0268 /* UIKit.framework */; };
 		23352352192723B0005E0268 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23352350192723B0005E0268 /* InfoPlist.strings */; };
 		23352354192723B0005E0268 /* iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23352353192723B0005E0268 /* iosTests.m */; };
-		2366084C192725C600867B9A /* UrlLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2366084B192725C600867B9A /* UrlLibrary.m */; };
+		2366084C192725C600867B9A /* LinkFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2366084B192725C600867B9A /* LinkFactory.m */; };
 		EAFF1EB54E8D4CBF948FEDD4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8C775AC24A4EEDBE5719B6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +55,8 @@
 		2335234F192723B0005E0268 /* iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iosTests-Info.plist"; sourceTree = "<group>"; };
 		23352351192723B0005E0268 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		23352353192723B0005E0268 /* iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosTests.m; sourceTree = "<group>"; };
-		2366084A192725C600867B9A /* UrlLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlLibrary.h; sourceTree = "<group>"; };
-		2366084B192725C600867B9A /* UrlLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlLibrary.m; sourceTree = "<group>"; };
+		2366084A192725C600867B9A /* LinkFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkFactory.h; sourceTree = "<group>"; };
+		2366084B192725C600867B9A /* LinkFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkFactory.m; sourceTree = "<group>"; };
 		89C945A0273E4FEAAE96135E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		9B8C775AC24A4EEDBE5719B6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,8 +189,8 @@
 		236608491927254A00867B9A /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				2366084A192725C600867B9A /* UrlLibrary.h */,
-				2366084B192725C600867B9A /* UrlLibrary.m */,
+				2366084A192725C600867B9A /* LinkFactory.h */,
+				2366084B192725C600867B9A /* LinkFactory.m */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 				2335233F192723B0005E0268 /* ViewController.m in Sources */,
 				23352339192723B0005E0268 /* AppDelegate.m in Sources */,
 				23352335192723B0005E0268 /* main.m in Sources */,
-				2366084C192725C600867B9A /* UrlLibrary.m in Sources */,
+				2366084C192725C600867B9A /* LinkFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
