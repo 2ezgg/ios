@@ -1,5 +1,5 @@
 //
-//  UrlLibrary.m
+//  LinkFactory.m
 //  ios
 //
 //  Created by Jake on 5/17/14.
@@ -73,5 +73,43 @@ NSString *const LolInvenChampDetail         = @"detail.php?code=";
 // linkFactory clone
 
 @implementation LinkFactory
+
+-(NSString*)getSpaceAndDashName:(NSString*)champ{
+    NSError* error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z ]*" options:(0) error:(&error)];
+    NSArray* matches = [regex matchesInString:champ options:(0) range:(NSMakeRange(0, [champ length]))];
+    NSString* result = @"";
+    for (NSTextCheckingResult* match in matches) {
+        result = [result stringByAppendingString:[champ substringWithRange:[match range]]];
+        NSLog(@"match: %@", result);
+    }
+    result = [result stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+    return result;
+}
+
+-(NSString*)getAllDashesName:(NSString*)champ{
+    NSError* error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z \`]*" options:(0) error:(&error)];
+    NSArray* matches = [regex matchesInString:champ options:(0) range:(NSMakeRange(0, [champ length]))];
+    NSString* result = @"";
+    for (NSTextCheckingResult* match in matches) {
+        result = [result stringByAppendingString:[champ substringWithRange:[match range]]];
+        NSLog(@"match: %@", result);
+    }
+    result = [result stringByReplacingOccurrencesOfString:@"`" withString:@"-"];
+    return result;
+}
+
+-(NSString*)getOnlyLettersName:(NSString*)champ{
+    NSError* error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z]*" options:(0) error:(&error)];
+    NSArray* matches = [regex matchesInString:champ options:(0) range:(NSMakeRange(0, [champ length]))];
+    NSString* result = @"";
+    for (NSTextCheckingResult* match in matches) {
+        result = [result stringByAppendingString:[champ substringWithRange:[match range]]];
+        NSLog(@"match: %@", result);
+    }
+    return result;
+}
 
 @end

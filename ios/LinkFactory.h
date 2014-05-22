@@ -1,5 +1,5 @@
 //
-//  UrlLibrary.h
+//  LinkFactory.h
 //  ios
 //
 //  Created by Jake on 5/17/14.
@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface LinkFactory : NSObject
+
+-(NSString*)getSpaceAndDashName:(NSString*)champ;
 
 @end
