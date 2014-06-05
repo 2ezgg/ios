@@ -70,6 +70,10 @@ NSString *const LolInven                    = @"http://lol.inven.co.kr";
 NSString *const LolInvenChampSearch         = @"/dataninfo/champion/";
 NSString *const LolInvenChampDetail         = @"detail.php?code=";
 
+NSString *const NameUrlFirstKey             = @"name=";
+NSString *const ServerUrlKey                = @"&server=";
+NSString *const RegionUrlKey                = @"&region=";
+
 // linkFactory clone
 
 @implementation LinkFactory
@@ -89,7 +93,7 @@ NSString *const LolInvenChampDetail         = @"detail.php?code=";
 
 -(NSString*)getAllDashesName:(NSString*)champ{
     NSError* error = nil;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z \`]*" options:(0) error:(&error)];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z `]*" options:(0) error:(&error)];
     NSArray* matches = [regex matchesInString:champ options:(0) range:(NSMakeRange(0, [champ length]))];
     NSString* result = @"";
     for (NSTextCheckingResult* match in matches) {
@@ -110,6 +114,22 @@ NSString *const LolInvenChampDetail         = @"detail.php?code=";
         NSLog(@"match: %@", result);
     }
     return result;
+}
+
+-(NSString*)getLolKingSummonerLink:(NSString*)region name:(NSString*)name{
+    return [NSString stringWithFormat:(@"%@%@%@%@%@%@"), LolKing, LolKingSearch, NameUrlFirstKey, name, RegionUrlKey, region];
+}
+
+-(NSString*)getLolChampionLink:(NSString*)champ{
+    return [NSString stringWithFormat:(@"%@%@%@"), LolKing, LolKingChampSearch, [self getLolKingFixedChamp:champ]];
+}
+
+-(NSString*)getLolKingFixedChamp:(NSString*)champion{
+    if([champion isEqualToString:@"wukong"]){
+        return @"monkeyking";
+    }else{
+        return champion;
+    }
 }
 
 @end
